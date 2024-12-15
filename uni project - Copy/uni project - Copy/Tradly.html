@@ -1,0 +1,812 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tradely</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="D:\uni project\image.png">
+    
+    <style>
+      .nav div, .auth-buttons .button, .form .button {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav div:hover, .auth-buttons .button:hover, .form .button:hover {
+    opacity: 0.8;
+}
+
+.form .input input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.form .input input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.5);
+}
+
+
+.nav div {
+padding: 10px;
+cursor: pointer;
+}
+
+.nav div.active {
+background-color: rgba(255, 255, 255, 0);
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #111111;
+    color: white;
+}
+.container {
+    width: 1440px;
+    margin: 0 auto;
+    position: relative;
+}
+.header, .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 120px;
+}
+.header .logo, .footer .logo {
+    display: flex;
+    align-items: center;
+}
+.header .logo div, .footer .logo div {
+    width: 47.46px;
+    height: 43.74px;
+    background: black;
+    position: relative;
+}
+.header .logo div::before, .footer .logo div::before {
+    content: '';
+    width: 25.85px;
+    height: 22.73px;
+    background: linear-gradient(0deg, #0046CD 0%, #036193 100%);
+    position: absolute;
+    top: 10.18px;
+    left:10.18px;
+}
+.header .logo div::after, .footer .logo div::after {
+    content: '';
+    width: 47.46px;
+    height: 43.71px;
+    background: linear-gradient(0deg, #0021CD 0%, #0284CA 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.header .logo span, .footer .logo span {
+    font-size: 24px;
+    font-weight: 700;
+    margin-left: 8px;
+}
+.nav {
+    display: flex;
+    gap: 40px;
+}
+.nav div {
+    font-size: 20px;
+    font-weight: 300;
+}
+.nav .active {
+    font-weight: 600;
+}
+.nav .active::after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: #0036F6;
+    border-radius: 50%;
+    margin: 8px auto 0;
+}
+.auth-buttons {
+    display: flex;
+    gap: 16px;
+}
+.auth-buttons .button {
+    padding: 16px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+.auth-buttons .button.login {
+    border: 1px solid white;
+}
+.auth-buttons .button.register {
+    background: #0036F6;
+}
+.main-content {
+    padding: 0 120px;
+    position: relative;
+}
+.main-content .headline {
+    margin-top: 90px;
+    font-size: 56px;
+    font-weight: 600;
+}
+.main-content .headline span {
+    font-style: italic;
+}
+.main-content .subheadline {
+    font-size: 56px;
+    font-weight: 200;
+}
+.main-content .subheadline span {
+    font-weight: 600;
+    color: #0036F6;
+}
+.main-content .blur-circle {
+    width: 180px;
+    height: 180px;
+    background: #0033ea;
+    box-shadow: 252px 252px 252px;
+    border-radius: 50%;
+    filter: blur(252px);
+    position: absolute;
+}
+.main-content .blur-circle.top {
+    top: 200px;
+    left: 910px;
+    box-shadow: 0px 0px 100px rgba(20, 71, 255, 0.905);
+}
+.main-content .blur-circle.bottom {
+    top: 1055px;
+    left: 490px;
+    box-shadow: 0px 0px 100px rgba(20, 71, 255, 0.905);
+}
+.main-content .graphic {
+    position: absolute;
+    top: 0px;
+    left: 925px;
+    display: flex;
+    gap: 20px;
+}
+.main-content .graphic img {
+    width: 100%;
+    height: auto;
+}
+.main-content .info-box {
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.10);
+    border-radius: 16px;
+    border: 0.5px solid black;
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 300;
+}
+.main-content .info-box.automated {
+    top: 200px;
+    left: 1120px;
+    position: absolute;
+}
+.main-content .info-box.performance {
+    top: 400px;
+    left: 817px;
+    position: absolute;
+}
+.main-content .form {
+    padding: 20px;
+    background: linear-gradient(190deg, #0036F6 0%, #061F76 100%);
+    box-shadow: 0px 0px 100px rgba(0, 54, 246, 0.30);
+    border-radius: 16px;
+    position: absolute;
+    top: 160px;
+    left: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.main-content .form .form-header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.main-content .form .form-header .title {
+    font-size: 24px;
+    font-weight: 500;
+}
+.main-content .form .form-header .subtitle {
+    font-size: 14px;
+    font-weight: 300;
+}
+.main-content .form .form-body {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.main-content .form .form-body .form-group {
+    display: flex;
+    gap: 24px;
+}
+.main-content .form .form-body .form-group .input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.main-content .form .form-body .form-group .input-field .label {
+    font-size: 14px;
+    font-weight: 400;
+}
+.main-content .form .form-body .form-group .input-field .input {
+    width: 260px;
+    height: 40px;
+    background: #3964FB;
+    border-radius: 8px;
+    border: 1px solid #0031DF;
+}
+.main-content .form .form-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.main-content .form .form-footer .button {
+    padding: 16px;
+    background: white;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #0036F6;
+    width: 150px;
+    height: 25px;
+}
+.main-content .form .form-footer .disclaimer {
+    font-size: 10px;
+    color: #8BBAF9;
+    line-height: 17px;
+}
+.main-content .form .form-footer .disclaimer span {
+    color: white;
+    text-decoration: underline;
+}
+.main-content .steps {
+    text-align: center;
+    margin-top: 700px;
+}
+.main-content .steps .title {
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #DBDBDB;
+}
+.main-content .steps .subtitle {
+    font-size: 40px;
+    font-weight: 700;
+}
+.main-content .steps .subtitle span {
+    color: #0535DD;
+}
+
+.main-content .features {
+display: flex;
+gap: 16px;
+margin-top: 130px;
+padding: 0 0;
+width: 100%;
+height: auto;
+}
+
+.main-content .features .feature {
+flex: 1;
+padding: 32px 24px;
+border-radius: 16px;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 8px;
+height: 370px; /* Set a fixed height */
+}
+
+.main-content .features .feature .description {
+flex-grow: 1;
+display: flex;
+align-items: center;
+overflow-y: auto; /* Add scrollbar if content exceeds height */
+}
+
+.main-content .features .feature .button {
+margin-top: auto; /* Push the button to the bottom */
+padding: 10px 20px;
+color: white;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+.main-content .features .feature .button:hover {
+background-color: #0025B3;
+}
+
+.main-content .features .feature {
+    background: #1B1B1B;
+}
+.main-content .features .feature .icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-content .features .feature .icon div {
+    width: 66.67px;
+    height: 66.67px;
+    position: relative;
+}
+.main-content .features .feature .icon div::before, .main-content .features .feature .icon div::after {
+    content: '';
+    position: absolute;
+    border: 5px solid white;
+}
+.main-content .features .feature .icon div::before {
+    width: 33.33px;
+    height: 33.33px;
+    top: 16.67px;
+    left: 16.67px;
+}
+.main-content .features .feature .icon div::after {
+    width: 66.67px;
+    height: 66.67px;
+    top: 0;
+    left: 0;
+}
+.main-content .features .feature .title {
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+}
+.main-content .features .feature .description {
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    color: #ADADAD;
+    line-height: 30px;
+}
+.main-content .features .feature.primary {
+    background: #0125a8;
+}
+.main-content .features .feature.secondary {
+    background: #1B1B1B;
+}
+.footer {
+    flex-direction: column;
+    gap: 64px;
+    padding: 48px 80px;
+    background: #111111;
+    margin-top: auto;
+}
+.footer .content {
+    display: flex;
+    gap: 100px;
+}
+.footer .content .section {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+.footer .content .section .title {
+    font-size: 20px;
+    font-weight: 600;
+}
+.footer .content .section .links {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.footer .content .section .links div {
+    font-size: 16px;
+    font-weight: 400;
+}
+.footer .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer .bottom .text {
+    font-size: 14px;
+    font-weight: 400;
+}
+.footer .bottom .menu {
+    display: flex;
+    gap: 18px;
+}
+.footer .bottom .menu div {
+    font-size: 16px;
+    font-weight: 400;
+}
+.footer .bottom .social {
+    display: flex;
+    gap: 24px;
+}
+.footer .bottom .social div {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer .bottom .social div i {
+    font-size: 24px;
+    color: white;
+}
+
+
+.FooterBlueprint01 {
+box-sizing: border-box;
+}
+.FooterSection {
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+.SectionTitle {
+color: white;
+font-size: 20px;
+font-family: Inter, sans-serif;
+font-weight: 600;
+margin: 0;
+}
+.SectionLinks {
+list-style-type: none;
+padding: 0;
+margin: 0;
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+.SectionLinks li a {
+color: #ADADAD;
+font-size: 16px;
+font-family: Inter, sans-serif;
+font-weight: 400;
+text-decoration: none;
+transition: color 0.3s ease;
+}
+.SectionLinks li a:hover {
+color: white;
+}
+.IconMenu a {
+text-decoration: none;
+transition: color 0.3s ease;
+}
+.IconMenu a:hover {
+color: #ADADAD;
+}
+@media (max-width: 768px) {
+.IconMenu {
+    flex-direction: column;
+    align-items: flex-start;
+}
+.IconMenu > div {
+    width: 100%;
+    justify-content: flex-start;
+}
+
+
+
+.IconMenu > div {
+width: 100%;
+}
+}
+
+.input input {
+width: 100%;
+height: 100%;
+background: transparent;
+border: none;
+color: white;
+padding: 0 10px;
+font-size: 14px;
+}
+
+.input.error {
+border: 1px solid red;
+}
+
+.social div {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    
+}
+
+.social div:hover {
+    transform: scale(1.2);
+    
+}  
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .nav.show {
+        display: flex;
+        flex-direction: column;
+    }
+}
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                
+                    <img src="logo.png"  style="width: 55px; height: 43.74px; position: relative;"/>
+                
+                    <span>Tradely</span>
+            </div>
+            <nav class="nav">
+                <div class="active">Home</div>
+                <div>Services</div>
+                <div>Features</div>
+                <div>Resources</div>
+            </nav>
+            <div class="auth-buttons">
+                <div class="button login">Log in</div>
+                <div class="button register">Register Now!</div>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </header>
+        <main class="main-content">
+            <div class="headline">
+                <span>Follow</span> and <span>Copy</span> trades
+            </div>
+            <div class="subheadline">
+                from <span>Successful Traders!</span>
+            </div>
+            <div class="blur-circle top"></div>
+            <div class="graphic">
+                <img src="Trading-bg1.png" style="width: 370px; height: 666px;" >
+               
+            </div>
+            <div class="info-box automated">
+                Completely <strong>Automated</strong> Trading
+            </div>
+            <div class="info-box performance">
+                <strong>Follow</strong> the performance of successful traders
+            </div>
+            <div class="form">
+                <div class="form-header">
+                    <div class="title">Meet Tradely</div>
+                    <div class="subtitle">Enter your details</div>
+                </div>
+                <div class="form-body">
+                    <div class="form-group">
+                        <div class="input-field">
+                            <div class="label">First Name</div>
+                            <div class="input"></div>
+                        </div>
+                        <div class="input-field">
+                            <div class="label">Last Name</div>
+                            <div class="input"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-field">
+                            <div class="label">Email</div>
+                            <div class="input"></div>
+                        </div>
+                        <div class="input-field">
+                            <div class="label">Phone Number</div>
+                            <div class="input"></div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="form-footer">
+                    <div class="button">Register Now!</div>
+                    <div class="disclaimer">
+                        By supplying your email you agree to FP Markets <span>privacy policy</span>
+                    <div>
+                         and receive future marketing materials from FP Markets. You can unsubscribe at any time.
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="steps">
+                <div class="title">in few easy steps</div>
+                <div class="subtitle">
+                    Copy Trading with <span>Tradely</span> Can be Done
+                </div>
+            </div>
+            <div class="blur-circle bottom"></div>
+            <div class="features">
+                <div class="feature">
+                    <div class="icon">
+                        <img src="icons8-registration-96.png" style="width: 80px; height: 80px;" >  
+                    </div>
+                    <div class="title">Open an Account</div>
+                    <div class="description">Trade seamlessly with Tradely on MetaTrader 4 or 5. Open an account, deposit with multiple options, and start copy trading.</div>
+                    <div class="button">Register Now!</div>
+                </div>
+                <div class="feature primary">
+                    <div class="icon">
+                        <img src="icons8-copy-96.png" style="width: 80px; height: 80px;" >
+                    </div>
+                    <div class="title">'Copy' Trading Options</div>
+                    <div class="description">We offer multiple copy trading modes and there is no limit on the number of Providers you can copy.</div>
+                </div>
+                <div class="feature secondary">
+                    <div class="icon">
+                        <img src="icons8-control-96.png" style="width: 80px; height: 80px;" >
+                    </div>
+                    <div class="title">'Control' is still in your hands</div>
+                    <div class="description">Log in to Social Trading with credentials. Manage risk with options like stop loss and take profit.</div>
+                </div>
+                <div class="feature secondary">
+                    <div class="icon">
+                        <img src="icons8-choose-96.png" style="width: 80px; height: 80px;" >
+                    </div>
+                    <div class="title">'Choose' the Best Traders to Follow</div>
+                    <div class="description">Find and follow the most successful traders.</div>
+                </div>
+            </div>
+        </main>
+        <div class="FooterBlueprint01" style="width: 100%; padding: 48px 5%; background: #111111; display: flex; flex-direction: column; justify-content: center; align-items: stretch; gap: 64px;">
+            <div class="Content" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px;">
+                <div class="Frame2" style="flex: 1 1 200px; display: flex; align-items: center; gap: 8px;">
+                    <img src="Screenshot_2024-11-24_163927-removebg-preview.png" style="width: 55px; height: 43.74px;"/>
+                    <div class="Tradely" style="color: white; font-size: 24px; font-family: Inter; font-weight: 700;">Tradely</div>
+                </div>
+                <div class="FooterSection" style="flex: 1 1 200px;">
+                    <h3 class="SectionTitle">Navigation</h3>
+                    <ul class="SectionLinks">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services / Products</a></li>
+                        <li><a href="#">Blog / News</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="FooterSection" style="flex: 1 1 200px;">
+                    <h3 class="SectionTitle">Company</h3>
+                    <ul class="SectionLinks">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Mission & Vision</a></li>
+                        <li><a href="#">Press / Media Kit</a></li>
+                        <li><a href="#">Partnerships / Affiliates</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div class="FooterSection" style="flex: 1 1 200px;">
+                    <h3 class="SectionTitle">Legal</h3>
+                    <ul class="SectionLinks">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="#">Accessibility Statement</a></li>
+                        <li><a href="#">Copyright Notice</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="IconMenu" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 32px;">
+                <div class="TheGoodCompan" style="flex: 1 1 auto; color: white; font-size: 14px; font-family: Inter; font-weight: 400;">
+                    © 2024 Tradely. All rights reserved.
+                </div>
+                <div class="Menu" style="flex: 1 1 auto; display: flex; justify-content: center; gap: 24px;">
+                    <a href="#" style="color: white; font-size: 16px; font-family: Inter; font-weight: 400;">Terms of Service</a>
+                    <a href="#" style="color: white; font-size: 16px; font-family: Inter; font-weight: 400;">Privacy Policy</a>
+                    <a href="#" style="color: white; font-size: 16px; font-family: Inter; font-weight: 400;">Cookie Policy</a>
+                </div>
+                <div class="social" style="flex: 0 0 auto; display: flex; gap: 15px;">
+                    <a href="https://twitter.com" style="color: rgb(48, 0, 240);" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                    <a href="https://youtube.com" style="color: rgb(48, 0, 240);" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    <a href="https://facebook.com" style="color: rgb(48, 0, 240);" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                    <a href="https://instagram.com" style="color: rgb(48, 0, 240);" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+
+
+          <script >
+            document.addEventListener('DOMContentLoaded', function() {
+    // Make navigation interactive
+    const navItems = document.querySelectorAll('.nav div');
+    navItems.forEach(item => {
+        item.addEventListener('click', function() {
+            navItems.forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
+        });
+
+        item.addEventListener('mouseenter', function() {
+            if (!this.classList.contains('active')) {
+                this.style.transform = 'translateY(-2px)';
+            }
+        });
+
+        item.addEventListener('mouseleave', function() {
+            if (!this.classList.contains('active')) {
+                this.style.transform = 'translateY(0)';
+            }
+        });
+    });
+
+    // Make auth buttons interactive
+    const authButtons = document.querySelectorAll('.auth-buttons .button');
+    authButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            alert(`You clicked: ${this.textContent}`);
+        });
+    });
+
+    // Make form inputs interactive
+    const formInputs = document.querySelectorAll('.form .input');
+    formInputs.forEach(input => {
+        const inputElement = document.createElement('input');
+        inputElement.type = 'text';
+        inputElement.placeholder = input.previousElementSibling.textContent;
+        input.appendChild(inputElement);
+    });
+
+    // Make form submission interactive
+    const form = document.querySelector('.form');
+    const submitButton = form.querySelector('.button');
+    submitButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        const formData = {};
+        form.querySelectorAll('input').forEach(input => {
+            formData[input.placeholder] = input.value;
+        });
+        console.log('Form submitted:', formData);
+        alert('Form submitted successfully!');
+    });
+
+    // Make features interactive
+    const features = document.querySelectorAll('.feature');
+    features.forEach(feature => {
+        feature.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.05)';
+        });
+        feature.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
+    });
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const nav = document.querySelector('.nav');
+        const menuToggle = document.createElement('button');
+        menuToggle.textContent = 'Menu';
+        menuToggle.classList.add('menu-toggle');
+        
+        document.querySelector('.header').insertBefore(menuToggle, nav);
+    
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('show');
+        });
+    });
+});
+
+          </script>
+</body>
+</html>

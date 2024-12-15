@@ -1,0 +1,527 @@
+.nav div, .auth-buttons .button, .form .button {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav div:hover, .auth-buttons .button:hover, .form .button:hover {
+    opacity: 0.8;
+}
+
+.form .input input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.form .input input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.5);
+}
+
+
+.nav div {
+padding: 10px;
+cursor: pointer;
+}
+
+.nav div.active {
+background-color: rgba(255, 255, 255, 0);
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #111111;
+    color: white;
+}
+.container {
+    width: 1440px;
+    margin: 0 auto;
+    position: relative;
+}
+.header, .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 120px;
+}
+.header .logo, .footer .logo {
+    display: flex;
+    align-items: center;
+}
+.header .logo div, .footer .logo div {
+    width: 47.46px;
+    height: 43.74px;
+    background: black;
+    position: relative;
+}
+.header .logo div::before, .footer .logo div::before {
+    content: '';
+    width: 25.85px;
+    height: 22.73px;
+    background: linear-gradient(0deg, #0046CD 0%, #036193 100%);
+    position: absolute;
+    top: 10.18px;
+    left:10.18px;
+}
+.header .logo div::after, .footer .logo div::after {
+    content: '';
+    width: 47.46px;
+    height: 43.71px;
+    background: linear-gradient(0deg, #0021CD 0%, #0284CA 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.header .logo span, .footer .logo span {
+    font-size: 24px;
+    font-weight: 700;
+    margin-left: 8px;
+}
+.nav {
+    display: flex;
+    gap: 40px;
+}
+.nav div {
+    font-size: 20px;
+    font-weight: 300;
+}
+.nav .active {
+    font-weight: 600;
+}
+.nav .active::after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: #0036F6;
+    border-radius: 50%;
+    margin: 8px auto 0;
+}
+.auth-buttons {
+    display: flex;
+    gap: 16px;
+}
+.auth-buttons .button {
+    padding: 16px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+.auth-buttons .button.login {
+    border: 1px solid white;
+}
+.auth-buttons .button.register {
+    background: #0036F6;
+}
+.main-content {
+    padding: 0 120px;
+    position: relative;
+}
+.main-content .headline {
+    margin-top: 90px;
+    font-size: 56px;
+    font-weight: 600;
+}
+.main-content .headline span {
+    font-style: italic;
+}
+.main-content .subheadline {
+    font-size: 56px;
+    font-weight: 200;
+}
+.main-content .subheadline span {
+    font-weight: 600;
+    color: #0036F6;
+}
+.main-content .blur-circle {
+    width: 180px;
+    height: 180px;
+    background: #0033ea;
+    box-shadow: 252px 252px 252px;
+    border-radius: 50%;
+    filter: blur(252px);
+    position: absolute;
+}
+.main-content .blur-circle.top {
+    top: 200px;
+    left: 910px;
+    box-shadow: 0px 0px 100px rgba(20, 71, 255, 0.905);
+}
+.main-content .blur-circle.bottom {
+    top: 1055px;
+    left: 490px;
+    box-shadow: 0px 0px 100px rgba(20, 71, 255, 0.905);
+}
+.main-content .graphic {
+    position: absolute;
+    top: 0px;
+    left: 925px;
+    display: flex;
+    gap: 20px;
+}
+.main-content .graphic img {
+    width: 100%;
+    height: auto;
+}
+.main-content .info-box {
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.10);
+    border-radius: 16px;
+    border: 0.5px solid black;
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 300;
+}
+.main-content .info-box.automated {
+    top: 200px;
+    left: 1120px;
+    position: absolute;
+}
+.main-content .info-box.performance {
+    top: 400px;
+    left: 817px;
+    position: absolute;
+}
+.main-content .form {
+    padding: 20px;
+    background: linear-gradient(190deg, #0036F6 0%, #061F76 100%);
+    box-shadow: 0px 0px 100px rgba(0, 54, 246, 0.30);
+    border-radius: 16px;
+    position: absolute;
+    top: 160px;
+    left: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.main-content .form .form-header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.main-content .form .form-header .title {
+    font-size: 24px;
+    font-weight: 500;
+}
+.main-content .form .form-header .subtitle {
+    font-size: 14px;
+    font-weight: 300;
+}
+.main-content .form .form-body {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.main-content .form .form-body .form-group {
+    display: flex;
+    gap: 24px;
+}
+.main-content .form .form-body .form-group .input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.main-content .form .form-body .form-group .input-field .label {
+    font-size: 14px;
+    font-weight: 400;
+}
+.main-content .form .form-body .form-group .input-field .input {
+    width: 260px;
+    height: 40px;
+    background: #3964FB;
+    border-radius: 8px;
+    border: 1px solid #0031DF;
+}
+.main-content .form .form-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.main-content .form .form-footer .button {
+    padding: 16px;
+    background: white;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #0036F6;
+    width: 150px;
+    height: 25px;
+}
+.main-content .form .form-footer .disclaimer {
+    font-size: 10px;
+    color: #8BBAF9;
+    line-height: 17px;
+}
+.main-content .form .form-footer .disclaimer span {
+    color: white;
+    text-decoration: underline;
+}
+.main-content .steps {
+    text-align: center;
+    margin-top: 700px;
+}
+.main-content .steps .title {
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #DBDBDB;
+}
+.main-content .steps .subtitle {
+    font-size: 40px;
+    font-weight: 700;
+}
+.main-content .steps .subtitle span {
+    color: #0535DD;
+}
+
+.main-content .features {
+display: flex;
+gap: 16px;
+margin-top: 130px;
+padding: 0 0;
+width: 100%;
+height: auto;
+}
+
+.main-content .features .feature {
+flex: 1;
+padding: 32px 24px;
+border-radius: 16px;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 8px;
+height: 370px; /* Set a fixed height */
+}
+
+.main-content .features .feature .description {
+flex-grow: 1;
+display: flex;
+align-items: center;
+overflow-y: auto; /* Add scrollbar if content exceeds height */
+}
+
+.main-content .features .feature .button {
+margin-top: auto; /* Push the button to the bottom */
+padding: 10px 20px;
+color: white;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+.main-content .features .feature .button:hover {
+background-color: #0025B3;
+}
+
+.main-content .features .feature {
+    background: #1B1B1B;
+}
+.main-content .features .feature .icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-content .features .feature .icon div {
+    width: 66.67px;
+    height: 66.67px;
+    position: relative;
+}
+.main-content .features .feature .icon div::before, .main-content .features .feature .icon div::after {
+    content: '';
+    position: absolute;
+    border: 5px solid white;
+}
+.main-content .features .feature .icon div::before {
+    width: 33.33px;
+    height: 33.33px;
+    top: 16.67px;
+    left: 16.67px;
+}
+.main-content .features .feature .icon div::after {
+    width: 66.67px;
+    height: 66.67px;
+    top: 0;
+    left: 0;
+}
+.main-content .features .feature .title {
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+}
+.main-content .features .feature .description {
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    color: #ADADAD;
+    line-height: 30px;
+}
+.main-content .features .feature.primary {
+    background: #0125a8;
+}
+.main-content .features .feature.secondary {
+    background: #1B1B1B;
+}
+.footer {
+    flex-direction: column;
+    gap: 64px;
+    padding: 48px 80px;
+    background: #111111;
+    margin-top: auto;
+}
+.footer .content {
+    display: flex;
+    gap: 100px;
+}
+.footer .content .section {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+.footer .content .section .title {
+    font-size: 20px;
+    font-weight: 600;
+}
+.footer .content .section .links {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.footer .content .section .links div {
+    font-size: 16px;
+    font-weight: 400;
+}
+.footer .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer .bottom .text {
+    font-size: 14px;
+    font-weight: 400;
+}
+.footer .bottom .menu {
+    display: flex;
+    gap: 18px;
+}
+.footer .bottom .menu div {
+    font-size: 16px;
+    font-weight: 400;
+}
+.footer .bottom .social {
+    display: flex;
+    gap: 24px;
+}
+.footer .bottom .social div {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer .bottom .social div i {
+    font-size: 24px;
+    color: white;
+}
+
+
+.FooterBlueprint01 {
+box-sizing: border-box;
+}
+.FooterSection {
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+.SectionTitle {
+color: white;
+font-size: 20px;
+font-family: Inter, sans-serif;
+font-weight: 600;
+margin: 0;
+}
+.SectionLinks {
+list-style-type: none;
+padding: 0;
+margin: 0;
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+.SectionLinks li a {
+color: #ADADAD;
+font-size: 16px;
+font-family: Inter, sans-serif;
+font-weight: 400;
+text-decoration: none;
+transition: color 0.3s ease;
+}
+.SectionLinks li a:hover {
+color: white;
+}
+.IconMenu a {
+text-decoration: none;
+transition: color 0.3s ease;
+}
+.IconMenu a:hover {
+color: #ADADAD;
+}
+@media (max-width: 768px) {
+.IconMenu {
+    flex-direction: column;
+    align-items: flex-start;
+}
+.IconMenu > div {
+    width: 100%;
+    justify-content: flex-start;
+}
+
+
+
+.IconMenu > div {
+width: 100%;
+}
+}
+
+.input input {
+width: 100%;
+height: 100%;
+background: transparent;
+border: none;
+color: white;
+padding: 0 10px;
+font-size: 14px;
+}
+
+.input.error {
+border: 1px solid red;
+}
+
+.social div {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    
+}
+
+.social div:hover {
+    transform: scale(1.2);
+    
+}
